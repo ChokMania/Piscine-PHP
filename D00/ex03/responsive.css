@@ -1,0 +1,17 @@
+body{font-family: "Arial";}
+h1{text-align:center;}
+div{text-align: center;}
+p{font-size:1vw;}
+p.masse{text-align:right;}
+h2{text-align:center; margin:10px; font-size:1.5vw;}
+table {width:100%; border-spacing: 0px; table-layout:fixed; position: relative;}
+.non-metaux{background-image:linear-gradient( white, green);}
+.alcalins{background-image:linear-gradient( white, red);}
+.alcalino-terreux{background-image:linear-gradient( white, orange);}
+.transition{background-image:linear-gradient( white, pink);}
+.lanthanides{background-image:linear-gradient( white, darkorchid);}
+.actinides{background-image:linear-gradient( white, grey);}
+.pauvres{background-image:linear-gradient( white, cyan);}
+.halogenes{background-image:linear-gradient( white, yellow);}
+.gaz-rares{background-image:linear-gradient( white, blue);}
+.non{background-image:linear-gradient( white, black);}
