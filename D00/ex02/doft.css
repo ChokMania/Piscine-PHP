@@ -1,0 +1,156 @@
+body {
+	background-color: #505050;
+}
+
+.haut, .gauche, .centre, .droite, .boxe{
+    background-color:#8E8E8E;
+	box-shadow:10px 10px 5px black;
+	border-radius: 10px;
+}
+
+.haut {
+    width: 85%;
+	margin:auto;
+	margin-bottom: 1%;
+}
+
+.centre {
+    position: absolute;
+	width: 64%;
+	display: inline-block;
+	margin-left: 2%;
+}
+
+.droite {
+    width: 7%;
+	float: right;
+	margin-right: 9%;
+}
+
+.gauche {
+    width:7%;
+    float:left;
+    margin-left:9%;
+}
+
+
+.img-gauche {
+    width:80%;
+    margin-top:10%;
+    margin-left:10%;
+}
+
+.rightimg {
+	width:60%;
+	margin-top:10%;
+	margin-left:20%;
+}
+
+.shadow {
+    text-shadow: 5px 5px 5px red;
+}
+
+.boxe {
+    position: relative;
+	background-color:#88ff89;
+	margin-top:33%;
+	margin-left:5%;
+	width:20%;
+}
+
+.line1{
+    margin-top: 0%;
+	margin-left: 1%;
+	font-size: 1em;
+    
+}
+.line2{
+    margin-left: 1%;
+	font-size: 0.9em;
+	font-style: italic;
+	font-family: sans-serif;
+}
+
+.entrez{
+    font-size: 2em;
+}
+
+.input{
+    margin-top: -2%;
+	margin-left: 1%;
+	width: 70%;
+	float:left;
+}
+
+.button{
+    margin-top: -2%;
+	margin-left: 1%;
+	float:left;
+	border:1px solid grey;
+}
+    
+#doft42 {
+    width: 30%;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+#loupe {
+    width:17%;
+    float:right;
+}
+
+#reload {
+    width:1.5%;
+    float:right;
+    margin-top:0.5%;
+    margin-right:0.5%;
+    margin-left:-1.5%;
+}
+
+#close {
+    width:1.5%;
+    float:right;
+    margin-top:6.5%;
+}
+
+#brick {
+    margin-left: auto;
+    margin-right: auto;
+    background-image:url("ressources/brick.jpg");
+    height:60px;
+    width:85%;
+    margin-bottom:250%;
+}
+
+#cluster {
+    position: relative;
+    width:98%;
+    margin-left:1%;
+    margin-top:1%;
+    margin-bottom:1%;
+}
+
+#oeil {
+    border: 6px solid red;
+    width: 65%;
+    border-radius: 5px;
+}
+
+#ikea {
+    top: 57%;
+    left: 33%;
+    width: 12%;
+    height: 22%;
+    display: block;
+    position: absolute;
+}
+
+#apple {
+    top: 55%;
+    left: 78%;
+    width: 19%;
+    height: 25%;
+    display: block;
+    position: absolute
+}
