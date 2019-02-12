@@ -1,23 +1,27 @@
 #!/usr/bin/php
 <?php
-	if ($argc != 2)
-	{
+	if ($argc != 2) {
 		echo "Incorrect Parameters\n";
-		return 0;
+		exit();
 	}
-	if ((!is_numeric($tab[1])) || (!is_numeric($tab[3])) || ($tab[2] != "+" && $tab[2] != "-" && $tab[2] != "/" && $tab[2] != "*" && $tab[2] != "%"))
-	{
+	$calcule = str_replace(" ", "", $argv[1]);
+	$nb1 = intval($calcule);
+	$op = substr(substr($calcule, strlen((string)$nb1)), 0, 1);
+	$nb2 = substr(substr($calcule, strlen((string)$nb1)), 1);
+	if (!is_numeric($nb1) || !is_numeric($nb2)){
 		echo "Syntax Error\n";
-		return 0;
+		exit();
 	}
-	if ($tab[2] == "+")
-		echo ($tab[1] + $tab[3]) . "\n";
-	else if ($tab[2] == "-")
-		echo ($tab[1] - $tab[3]) . "\n";
-	else if ($tab[2] == "*")
-		echo ($tab[1] * $tab[3]) . "\n";
-	else if ($tab[2] == "/")
-		echo ($tab[1] / $tab[3]) . "\n";
-	else if ($tab[2] == "%")
-		echo ($tab[1] % $tab[3]) . "\n";
+	if ($op == "+")
+		echo $nb1 + $nb2 . "\n";
+	else if ($op == "-")
+		echo $nb1 - $nb2 . "\n";
+	else if ($op == "*")
+		echo $nb1 * $nb2 . "\n";
+	else if ($op == "/")
+		echo $nb1 / $nb2 . "\n";
+	else if ($op == "%")
+		echo $nb1 % $nb2 . "\n";
+	else
+		echo "Syntax Error\n";
 ?>
