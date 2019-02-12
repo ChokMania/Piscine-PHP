@@ -67,18 +67,19 @@ nav > ul > li:hover a {
     padding: 15px 30px 20px 30px;
 }
 
-.menu-html:hover {
-    border-top: 5px solid #e44d26;
-    background-color: rgba(228, 77, 38, 0.15);
+
+.submenu li:hover a{
+	color: black;
+    font-weight: bold;
 }
 
 .menu-html .submenu {
-    background-color: RGB(230, 100, 40);
+	background-color: RGB(230, 100, 40);
 }
 
-.submenu li:hover a{
-    color: black;
-    font-weight: bold;
+.menu-html:hover {
+	border-top: 5px solid #e44d26;
+	background-color: rgba(228, 77, 38, 0.15);
 }
 
 .menu-html .submenu li:hover {
