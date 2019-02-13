@@ -1,17 +1,93 @@
-body{font-family: "Arial";}
-h1{text-align:center;}
-div{text-align: center;}
-p{font-size:1vw;}
-p.masse{text-align:right;}
-h2{text-align:center; margin:10px; font-size:1.5vw;}
-table {width:100%; border-spacing: 0px; table-layout:fixed; position: relative;}
-.non-metaux{background-image:linear-gradient( white, green);}
-.alcalins{background-image:linear-gradient( white, red);}
-.alcalino-terreux{background-image:linear-gradient( white, orange);}
-.transition{background-image:linear-gradient( white, pink);}
-.lanthanides{background-image:linear-gradient( white, darkorchid);}
-.actinides{background-image:linear-gradient( white, grey);}
-.pauvres{background-image:linear-gradient( white, cyan);}
-.halogenes{background-image:linear-gradient( white, yellow);}
-.gaz-rares{background-image:linear-gradient( white, blue);}
-.non{background-image:linear-gradient( white, black);}
+table {
+	border-spacing: 0.3vw 0.2vh;
+}
+
+td {
+	width: 5vw;
+	height: 9.1vh;
+	border: 0.1vmin solid black;
+	text-align: center;
+	font-family: Arial;
+}
+
+thead {
+	width: 100vw;
+	height: 9.1vh;
+	font-size: 5vmin;
+	color: black;
+	font-family: Arial;
+}
+
+img {
+	width: 14vmin;
+	height: auto;
+}
+
+span {
+	font-size: 2vmin;
+}
+
+.Alkali_metal {
+	background-image:linear-gradient( white, red);
+}
+
+.Alkaline_earth_metal {
+	background-image: linear-gradient(white, orange);
+}
+
+.Transition_metal {
+	background-image: linear-gradient(white, yellow);
+}
+
+.Lanthanide {
+	background-image: linear-gradient( white, yellowgreen);
+}
+
+.Actinide {
+	background-image: linear-gradient( white, chartreuse);
+}
+
+.Post_transition_metal {
+	background-image: linear-gradient( white, green);
+}
+
+.Metalloid {
+	background-image: linear-gradient( white, deepskyblue);
+}
+
+.Polyatomic_nonmental {
+	background-image: linear-gradient( white, cyan);
+}
+
+.Diatomic_nonmental {
+	background-image: linear-gradient(white, blueviolet);
+}
+
+.Noble_gas {
+	background-image: linear-gradient( white, blue);
+}
+
+.Unclassified {
+	background-image: linear-gradient( white, grey);
+}
+
+.Center {
+	font-size: 1.5vmin;
+	text-align: center;
+	line-height: auto;
+}
+
+.Up {
+	font-size: 1vmin;
+	text-align: right;
+}
+
+.Down {
+	font-size: 1vmin;
+	text-align: left;
+	line-height: auto;
+}
+
+.space {
+	border: 0;
+}
