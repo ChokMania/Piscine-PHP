@@ -1,87 +1,78 @@
-body {
-    font-family: 'Source code pro', Calibri, serif;
-    margin: 0px;
-    padding: 0px;
+div#menu
+{
+	width:100px;
 }
 
-nav > ul {
-    margin: 0px;
-    padding: 0px;
+div#menu a
+{
+	color:#000;
 }
 
-nav > ul > li {
-    float: left;
-    position: relative;
+div#menu ul
+{
+	padding:0;
+	width:100%;
+	border:1px solid;
+	margin:0px;
+	background:#fff;
 }
 
-nav li {
-    list-style-type: none;
+div#menu li:hover
+{
+	background:#edd;
 }
 
-.submenu {
-    display: none;
+div#menu li.sousmenu:hover
+{
+	background:#ebb;
 }
 
-nav li:hover .submenu {
-    display: inline-block;
-    position: absolute;
-    top: 100%;
-    left: 0px;
-    padding: 0px;
-    z-index: 100000;
+div#menu ul li
+{
+	position:relative;
+	list-style:none;
+	border-bottom:1px solid;
 }
 
-nav {
-    width: 100%;
-    background-color: #424558;
+div#menu ul ul
+{
+	position:absolute;
+	top:-1px;
+	left:100px;
+	display:none;
 }
 
-nav > ul::after {
-    content: "";
-    display: block;
-    clear: both; 
+div#menu li a
+{
+	text-decoration:none;
+	padding:4px 0 4px 8px;
+	display:block;
+	border-left:10px solid #bbb;
+	width:70%;
 }
 
-nav a {
-    display: inline-block ;
-    text-decoration: none;
+div#menu ul.niveau1 li.sousmenu:hover ul.niveau2
+{
+	display:block;
 }
 
-nav > ul > li > a {
-    padding: 20px 30px;
-    color: #FFF;
+div#menu ul.niveau2 li.sousmenu:hover ul.niveau3
+{
+	display:block;
 }
 
-.submenu li {
-    border-bottom: 1px solid rgb(231, 14, 14);
+div#menu ul li a:hover
+{
+	border-left-color:red;
 }
 
-.submenu li a {
-    padding: 15px 30px;
-    font-size: 13px;
-    color : #222538;
-    width: 270px;
-}
-
-nav > ul > li:hover a {
-    padding: 15px 30px 20px 30px;
-}
+div#menu ul ul li a:hover
+{
+	border-left-color:#0f0}
 
 
-.submenu li:hover a{
-	color: black;
-    font-weight: bold;
+div#menu ul ul ul li a:hover{
+
+	border-left-color:#00f;
 }
 
-.menu-html .submenu {
-	background-color: RGB(230, 100, 40);
-}
-
-.menu-html:hover {
-	border-top: 5px solid #e44d26;
-	background-color: rgba(228, 77, 38, 0.15);
-}
-
-.menu-html .submenu li:hover {
-    background-color: RGB(210, 77, 60);
-}
