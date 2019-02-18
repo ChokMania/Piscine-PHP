@@ -31,7 +31,7 @@
 		else if(ctype_alpha($test) == FALSE && is_numeric($test) == FALSE)
 			$ascii[$i++] = $test;
 	}
-	rsort($numeric, SORT_NUMERIC);
+	sort($numeric, SORT_FLAG_CASE | SORT_STRING);
 	sort($string, SORT_NATURAL | SORT_FLAG_CASE);
 	sort($ascii);
 	foreach($string as $element)
