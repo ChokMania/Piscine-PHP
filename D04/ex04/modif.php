@@ -9,7 +9,7 @@
 	// Validation
 	if (!$_POST || !isset($_POST['submit']) || $_POST['submit'] !== "OK")
 		exit("ERROR\n");
-	if (!isset($_POST['login']) || empty($_POST['login']) || !isset($_POST['oldpw']) || empty($_POST['oldpw']) || !isset($_POST['newpw']) || empty($_POST['newpw']))
+	if (!isset($_POST['login']) || $_POST['login'] == "" || !isset($_POST['oldpw']) || $_POST['oldpw'] == "" || !isset($_POST['newpw']) || $_POST['newpw'] == "")
 		exit("ERROR\n");
 	// Get users
 	$users = @file_get_contents('../private/passwd');

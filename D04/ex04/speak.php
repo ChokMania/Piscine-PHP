@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_POST && isset($_POST['msg']) && !empty($_POST['msg']) && isset($_SESSION['loggued_on_user']) && !empty($_SESSION['loggued_on_user'])) {
+if ($_POST && isset($_POST['msg']) && $_POST['msg'] != "" && isset($_SESSION['loggued_on_user']) && $_SESSION['loggued_on_user'] != "") {
 	if (!file_exists('../private/chat')) {
 		if (!is_dir('../private'))
 			mkdir('../private');

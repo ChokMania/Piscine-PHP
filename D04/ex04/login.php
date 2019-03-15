@@ -21,10 +21,5 @@
 		<a href="logout.php" style="float: right">Se déconnecter</a>
 		<iframe name="chat" src="chat.php" width="100%" height="550px"></iframe>
 		<iframe name="speak" src="speak.php" width="100%" height="50px"></iframe>
-		<script>
-			setInterval(function () {
-				frames['chat'].location = 'chat.php'
-			}, 5000) // 5 sec
-		</script>
 	</body>
 </html>

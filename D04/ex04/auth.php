@@ -1,17 +1,18 @@
 <?php
 	function auth($login, $passwd) {
-		// Get users
-		$users = @file_get_contents('../private/passwd');
-		if (!$users)
+		if (!$login || !$passwd || $login === "" || $passwd === "")
 			return false;
-		$users = unserialize($users);
-		// Find user
-		foreach ($users as $i => $user) {
-			if ($user['login'] != $login)
-				continue;
-			if ($user['passwd'] !== hash('whirlpool', $passwd))
-				return false;
-			return true;
+		if (!file_exists('../private/passwd'))
+		{
+			mkdir('../private');
+			return false;
+		}
+		$user = unserialize(file_get_contents('../private/passwd'));
+		if ($user) {
+			foreach ($user as $k => $v) {
+				if ($v['login'] === $login && $v['passwd'] === hash('whirlpool', $passwd))
+					return true;
+			}
 		}
 		return false;
 	}

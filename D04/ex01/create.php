@@ -16,10 +16,8 @@
 		$users = unserialize(file_get_contents("../private/passwd"));
 	if ($users)
 		foreach($users as $id)
-			if ($id["login"] == $login) {
-				echo "ERROR\n";
-				exit (1);
-			}
+			if ($id["login"] == $login)
+				exit ("ERROR\n");
 	$users[] = $new_user;
 	file_put_contents("../private/passwd", serialize($users));
 	echo "OK\n";
