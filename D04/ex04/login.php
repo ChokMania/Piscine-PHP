@@ -9,7 +9,7 @@
 	$_SESSION['loggued_on_user'] = $_POST['login'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
 		<title>42chat</title>
