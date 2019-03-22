@@ -13,7 +13,6 @@ ul {
 
 ul {
 	list-style: disc;
-	padding: 0 0 0 20px;
 }
 
 a {
@@ -30,15 +29,19 @@ h2 {
 
 article {
 	border-bottom: 1px solid #d8d8d8;
-	padding: 10px 20px 0 20px;
+	padding: 10px 10px 0 10px;
 	margin: 10px 0;
 }
 
 /*header*/
 
+.logo {
+	margin-top: 40px;
+}
+
 header {
 	background: #1c1c1c;
-	padding: 20px 15px;
+	padding: 0px 10px;
 }
 		header:before,
 		header:after {
@@ -93,7 +96,9 @@ a.to_nav:focus {
 	list-style: none;
 	background: #1c1c1c;
 	margin-top: 5px;
-	padding: 15px 0;
+	margin-bottom: 5px;
+	text-align: center;
+	padding: 0px 0;
 }
 
 #primary_nav li a {
@@ -130,7 +135,6 @@ footer {
 }
 
 @media only screen and (min-width: 650px) {
-
 	a.to_nav {
 		display: none;
 	}
@@ -160,5 +164,4 @@ footer {
 		-moz-border-radius: 2px;
 		border-radius: 2px;
 	}
-
 }

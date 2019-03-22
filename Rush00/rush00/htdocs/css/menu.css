@@ -1,0 +1,47 @@
+header {
+	border-bottom: 1px solid black;
+}
+
+header p {
+	text-align: right;
+}
+
+fieldset {
+	margin-top: 15px;
+}
+
+#menu {
+	height: 0;
+	overflow: hidden;
+	transition: height 1.5s;
+	margin-top: 50px;
+	width: 175px;
+}
+
+#menu:target {
+	height: 201px;
+}
+
+#fermer {
+	width: 15%;
+}
+
+@media only screen and (min-width: 650px) {
+	header { border-bottom: 1px solid black;}
+	header p {text-align: right;}
+
+	#menu {
+		height: 0;
+		overflow: hidden;
+		transition: height 1.5s;
+		margin-top: 50px;
+		width: 0px;
+	}
+	#menu:target {
+		height: 0px;
+	}
+	#fermer {
+		width: 0%;
+		display: none;
+	}
+}
