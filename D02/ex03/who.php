@@ -1,6 +1,6 @@
 #!/usr/bin/php
 <?php
-	$unpack = "a256user/a4id/A32ttyname/ipid/ltype/ltv/a256host/A64pad";
+	$unpack = "a256user/a4id/a32ttyname/ipid/ltype/ltv/a256host/a16pad";
 	$input = file_get_contents("/var/run/utmpx");
 	while ($input != "")
 	{
