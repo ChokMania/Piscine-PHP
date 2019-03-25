@@ -1,16 +1,13 @@
-#!/usr/bin/php
 <?php
-	function ft_is_sort($test)
+	function	ft_is_sort($tab)
 	{
-		if (count($test) == 1)
-			return (TRUE);
-		$tmp = $test;
-		sort($tmp);
-		for ($i = 0; $i < count($test); $i++)
+		$i = 0;
+		while ($i < count($tab) - 1)
 		{
-			if (strcmp($tmp[$i], $test[$i]))
-				return (FALSE);
-		};
-		return (TRUE);
+			if (strcmp($tab[$i], $tab[$i + 1]) > 0)
+				return (0);
+			$i++;
+		}
+		return (1);
 	}
 ?>

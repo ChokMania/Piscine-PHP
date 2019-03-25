@@ -1,10 +1,9 @@
-#!/usr/bin/php
 <?php
-	function ft_split($text)
+	function	ft_split($text)
 	{
-		$test = explode(" ", $text);
-		$result = array_filter($test);
+		$text = explode(' ', $text);
+		$result = array_filter($text);
 		sort($result);
-		return($result);
+		return ($result);
 	}
 ?>

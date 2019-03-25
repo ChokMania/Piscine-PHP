@@ -1,22 +1,28 @@
 #!/usr/bin/php
 <?php
-	if (count($argv) != 4)
+	function	ft_error()
 	{
 		echo "Incorrect Parameters\n";
-		return ;
 	}
-	$nb1 = intval($argv[1]);
-	$nb2 = intval($argv[3]);
-	$eval = trim($argv[2]);
-	if ($eval == "+")
-		echo $nb1 + $nb2;
-	if ($eval == "-")
-		echo $nb1 - $nb2;
-	if ($eval == "*")
-		echo $nb1 * $nb2;
-	if ($eval == "/")
-		echo $nb1 / $nb2;
-	if ($eval == "%")
-		echo $nb1 % $nb2;
-	echo "\n";
+
+	if ($argc != 4)
+		return (ft_error());
+	$first = trim($argv[1], "\t ");
+	$second = trim($argv[2], "\t ");
+	$third = trim($argv[3], "\t ");
+	if (!is_numeric($first) || !is_numeric($third))
+		return (ft_error());
+	if ($second != '/' && $second != '+' && $second != '*' && $second
+		!= '-' && $second != '%')
+		return (ft_error());
+	if ($second == '+')
+		echo ($first + $third) . "\n";
+	else if($second == '-')
+		echo ($first - $third) . "\n";
+	else if ($second == '*')
+		echo ($first * $third) . "\n";
+	else if ($second == '/')
+		echo ($first / $third) . "\n";
+	else if ($second == '%')
+		echo ($first % $third) . "\n";
 ?>

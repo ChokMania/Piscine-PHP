@@ -1,43 +1,59 @@
 #!/usr/bin/php
 <?php
-	function ft_split($text)
+	function	ft_cmp($s1, $s2)
 	{
-		$test = explode(" ", $text);
-		$result = array_filter($test);
-		sort($result);
-		return($result);
+		$s1 = strtolower($s1);
+		$s2 = strtolower($s2);
+		$i = 0;
+		while ($s1[$i])
+		{
+			if ($s1[$i] != $s2[$i])
+			{
+				if (Ctype_alpha($s1[$i]) && Ctype_alpha($s2[$i]))
+					return (strcmp($s1[$i], $s2[$i]));
+				else if (is_numeric($s1) && is_numeric($s2))
+					return (strcmp($s1[$i], $s2[$i]));
+				else if (Ctype_alpha($s1[$i]) && !Ctype_alpha($s2[$i]))
+					return (-1);
+				else if (!Ctype_alpha($s1[$i]) && Ctype_alpha($s2[$i]))
+					return (1);
+				else if (is_numeric($s1[$i]) && !is_numeric($s2[$i]))
+					return (-1);
+				else if (!is_numeric($s1[$i]) && is_numeric($s2[$i]))
+					return (1);
+				else
+					return (strcmp($s1[$i], $s2[$i]));
+			}
+			$i++;
+		}
+		return ($s1[$i] - $s2[$i]);
 	}
 	if ($argc < 2)
-	{
-		echo "\n";
 		return ;
-	}
-	$elem = array();
-	foreach ($argv as $arg)
+	$j = 0;
+	$tab = array();
+	while ($j + 1 < $argc)
 	{
-		if ($arg != $argv[0])
-		{
-			$tab = ft_split($arg);
-			$elem = array_merge($elem, $tab);
-		}
+		$strtmp = trim($argv[$j + 1], " ");
+		$strtmp = preg_replace('/ +/',' ', $strtmp);
+		$tabtmp = explode(' ', $strtmp);
+		$i = 0;
+		while ($i++ < count($tabtmp))
+			array_push($tab, $tabtmp[$i - 1]);
+		$j++;
 	}
 	$i = 0;
-	foreach ($elem as $test)
+	while ($i < count($tab) - 1)
 	{
-		if(is_numeric($test) == TRUE)
-			$numeric[$i++] = $test;
-		else if(ctype_alpha($test) == TRUE)
-			$string[$i++] = $test;
-		else if(ctype_alpha($test) == FALSE && is_numeric($test) == FALSE)
-			$ascii[$i++] = $test;
+		if (ft_cmp($tab[$i], $tab[$i + 1]) > 0)
+		{
+			$tmp = $tab[$i];
+			$tab[$i] = $tab[$i + 1];
+			$tab[$i + 1] = $tmp;
+			$i = -1;
+		}
+		$i++;
 	}
-	sort($numeric, SORT_FLAG_CASE | SORT_STRING);
-	sort($string, SORT_NATURAL | SORT_FLAG_CASE);
-	sort($ascii);
-	foreach($string as $element)
-		echo $element . "\n";
-	foreach($numeric as $element)
-		echo $element . "\n";
-	foreach($ascii as $element)
-		echo $element. "\n";
+	foreach($tab as $print)
+		echo $print . "\n";
 ?>

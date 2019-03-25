@@ -1,25 +1,31 @@
 #!/usr/bin/php
 <?php
-	function ft_split($text)
+	function	ft_split($text)
 	{
-		$test = explode(" ", $text);
-		$result = array_filter($test);
+		$text = explode(' ', $text);
+		$result = array_filter($text);
 		sort($result);
-		return($result);
-	 }
-	 if ($argc > 1)
+		return ($result);
+	}
+	if ($argc < 2)
+		return ;
+	$j = 0;
+	$print = array();
+	while ($j + 1 < $argc)
 	{
-		$final = array();
-		for ($i = 1; $i < count($argv); $i++)
-		{
-			$str = trim(preg_replace('/ +/', ' ', $argv[$i]));
-			$result = ft_split($str);
-			for ($j = 0; $j < count($result); $j++) { 
-				$word = array_push($final, $result[$j]);
-			}
-		}
-		sort($final);
-		for ($i = 0; $i < count($final); $i++)
-			echo ($final[$i]."\n");
+		$strtmp = trim($argv[$j + 1], " ");
+		$strtmp = preg_replace('/ +/',' ', $strtmp);
+		$tabtmp = ft_split($strtmp);
+		$i = 0;
+		while ($i++ < count($tabtmp))
+			array_push($print, $tabtmp[$i - 1]);
+		$j++;
+	}
+	$i = 0;
+	sort($print);
+	while ($i < count($print))
+	{
+		echo $print[$i] . "\n";
+		$i++;
 	}
 ?>

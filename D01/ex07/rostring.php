@@ -1,14 +1,24 @@
 #!/usr/bin/php
 <?php
-if ($argc > 1)
-{
-	for ($i = 0; $i < $argc; $i++)
+	function	ft_split($text)
 	{
-		$final = trim(preg_replace('/ +/', ' ', $argv[1]));
-		$final = explode(" ", $str);
+		$text = explode(' ', $text);
+		$result = array_filter($text);
+		return ($result);
 	}
-	for ($i = 1; $i < count($final); $i++)
-		echo $final[$i] . " ";
-	echo ($final[0]."\n");
-}
+	if ($argc < 2 || $argv[1] == "")
+		return ;
+	$result = array();
+	$tmp = trim(preg_replace('/ +/', ' ', $argv[1]));
+	$result = ft_split($tmp);
+	$i = 1;
+	$count = count($result) - 1;
+	while ($i < count($result))
+	{
+		echo $result[$i];
+		echo " ";
+		$i++;
+	}
+	echo $result[0];
+	echo "\n";
 ?>

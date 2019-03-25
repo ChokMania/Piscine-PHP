@@ -1,19 +1,28 @@
 #!/usr/bin/php
 <?php
-    if ($argc < 3) {
-        exit();
-    }
-    $tmp = array();
-    $search = $argv[1];
-    unset($argv[0], $argv[1]);
-    $argv = array_reverse($argv);
-    foreach ($argv as $v)
-    {
-        $tmp = explode(":", $v);
-        if ($search === $tmp[0])
-        {
-            echo $tmp[1]."\n";
-            exit();
-        }
-    }
+	if ($argc < 3)
+	{
+		return ;
+	}
+	$key = $argv[1];
+	$i = 2;
+	$ok = 0;
+	while ($i < $argc) {
+		if (strncmp($key, $argv[$i], strlen($key)) == 0)
+		{
+			$lenargv = strlen($argv[$i]);
+			$lenkey = strlen($key);
+			if ($lenargv > $lenkey + 1)
+			{
+				if ($argv[$i][$lenkey] == ':')
+				{
+					$ok = 1;
+					$value = substr($argv[$i], strlen($key) + 1);
+				}
+			}
+		}
+		$i++;
+	}
+	if ($ok == 1)
+		echo $value . "\n";
 ?>
