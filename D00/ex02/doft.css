@@ -75,14 +75,14 @@ body {
 }
 
 .entrez{
-	font-size: 1.7vw;
-	font-family: Georgia;
+	font-size: 1.8vw;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 .input{
 	margin-top: -3%;
 	margin-left: 2%;
-	width: 75%;
+	width: 77%;
 	height: 2%;
 	border: 2px solid grey;
 	border-color: grey lightgrey lightgrey grey;
@@ -90,21 +90,19 @@ body {
 }
 
 .button{
-	margin-top: -20px;
+	margin-top: -21px;
 	margin-left: 2%;
 	float:left;
-	background: white;
-	border: 1px solid grey;
+	background: linear-gradient(rgb(245, 247, 246), rgb(221, 221, 221));
+	border: 1px solid rgb(167, 164, 165);
+	font-family: arial, sans-serif;
 	border-radius: 0;
 	font-size: 15px;
-	height: 19px;
-	letter-spacing: 1.6px;
-	padding-bottom: 20px;
-	padding-top: 1px;
+	letter-spacing: 0.5px;
 	width: 90px;
-	height: 22px;
+	height: 27px;
 }
-	
+
 #doft42 {
 	width: 30%;
 	margin-top: 1%;
