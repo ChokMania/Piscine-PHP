@@ -61,6 +61,11 @@ div#menu ul.niveau2 li.sousmenu:hover ul.niveau3
 	display:block;
 }
 
+div#menu ul.niveau3 li.sousmenu:hover ul.niveau4
+{
+	display:block;
+}
+
 div#menu ul li a:hover
 {
 	border-left-color:red;
@@ -68,11 +73,15 @@ div#menu ul li a:hover
 
 div#menu ul ul li a:hover
 {
-	border-left-color:#0f0}
+	border-left-color:green}
 
 
 div#menu ul ul ul li a:hover{
 
-	border-left-color:#00f;
+	border-left-color:blue;
 }
 
+div#menu ul ul ul ul li a:hover{
+
+	border-left-color:purple;
+}
