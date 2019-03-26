@@ -1,6 +1,6 @@
 #!/usr/bin/php
 <?php
-	if (count($argv) == 2)
+	if ($argc == 2)
 	{
 		$str = trim($argv[1]);
 		$str = preg_replace('/ +/', ' ', $str);
