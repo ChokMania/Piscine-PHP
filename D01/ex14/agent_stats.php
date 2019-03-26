@@ -3,8 +3,6 @@
 	if ($argc < 2 || $argc > 2 || ($argv[1] != "moyenne" &&
 		$argv[1] != "moyenne_user" && $argv[1] != "ecart_moulinette"))
 		exit();
-	if (fgets(STDIN) != "User;Note;Noteur;Feedback\n")
-		exit();
 	$file = file("php://stdin");
 	unset($file[0]);
 	for ($i = 1; $file[$i]; $i++) {
