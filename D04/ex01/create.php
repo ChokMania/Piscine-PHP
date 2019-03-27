@@ -1,15 +1,12 @@
 <?php
-	session_start();
-	if (!((isset($_POST['login']) && $_POST['login'] != NULL) &&
-		(isset($_POST['passwd']) && $_POST['passwd'] != NULL) &&
-		(isset($_POST['submit']) && $_POST['submit'] === "OK"))) {
+	if ($_POST['login'] == NULL || $_POST['passwd'] == NULL || $_POST['submit'] !== "OK") {
 		echo "ERROR\n";
 		exit (1);
 	}
 	if (!file_exists("../private"))
-		mkdir("../private");
+		@mkdir("../private");
 	$login = $_POST["login"];
-	$pwd = hash("whirlpool", $_POST["passwd"]);
+	$pwd = hash("sha512", $_POST["passwd"]);
 	$new_user["login"] = $login;
 	$new_user["passwd"] = $pwd;
 	if (file_exists("../private/passwd"))

@@ -25,7 +25,7 @@
 	// Add user
 	$users[] = [
 		'login' => $_POST['login'],
-		'passwd' => hash('whirlpool', $_POST['passwd'])
+		'passwd' => hash('sha512', $_POST['passwd'])
 	];
 	// Save
 	file_put_contents('../private/passwd', serialize($users));

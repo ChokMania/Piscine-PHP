@@ -24,6 +24,6 @@
 		else
 			array_push($result, $value);
 	}
-	for ($i = 0; result[$i]; $i++)
+	for ($i = 0; $result[$i]; $i++)
 		echo $result[$i];
 ?>

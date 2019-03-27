@@ -10,7 +10,7 @@
 		$user = unserialize(file_get_contents('../private/passwd'));
 		if ($user) {
 			foreach ($user as $k => $v) {
-				if ($v['login'] === $login && $v['passwd'] === hash('whirlpool', $passwd))
+				if ($v['login'] === $login && $v['passwd'] === hash('sha512', $passwd))
 					return true;
 			}
 		}

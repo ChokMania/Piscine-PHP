@@ -13,9 +13,9 @@
 	</head>
 	<body>
 		<form method="get" action=".">
-			Identifiant <input type="text" name="login" value ="<?php echo $_SESSION["login"] ?>" /> <!-- isset pour garder en tete le dernier login tapé -->
+			Identifiant <input type="text" name="login" value ="<?php echo $_SESSION["login"] ?>" required/>
 			<br>
-			Mot de passe <input type="password" name="passwd" value = "<?php echo $_SESSION["passwd"] ?>" />
+			Mot de passe <input type="password" name="passwd" value = "<?php echo $_SESSION["passwd"] ?>" required/>
 			<input type="submit" name="submit" value="OK">
 		</form>
 	</body>
