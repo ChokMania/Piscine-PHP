@@ -1,10 +1,13 @@
 <?php
 	function	ft_is_sort($tab)
 	{
-		$tmp = $tab;
-		sort($tmp);
-		if ($tab == $tmp)
-			return (1);
-		return (0);
+		$i = 0;
+		while ($i < count($tab) - 1)
+		{
+			if (strcmp($tab[$i], $tab[$i + 1]) > 0)
+				return (0);
+			$i++;
+		}
+		return (1);
 	}
 ?>
