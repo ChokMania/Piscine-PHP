@@ -78,7 +78,7 @@
 	{
 		array_splice($argv, 0, 1);
 		foreach($argv as &$elem)
-		$elem = epur_str($elem);
+			$elem = epur_str($elem);
 		$tab = implode(" ", $argv);
 		$tab = explode(" ", $tab);
 		$tab = array_filter($tab, "filter");
