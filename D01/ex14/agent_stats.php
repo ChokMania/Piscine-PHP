@@ -19,7 +19,7 @@
 				$moy += $file[$i][1];
 			else
 				$nb++;
-		echo $moy/($i - $nb)."$moy\n";
+		echo $moy/($i - $nb)."\n";
 	}
 	else
 	{
