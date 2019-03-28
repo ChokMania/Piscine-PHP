@@ -14,7 +14,7 @@
 			$i = 0;
 			foreach($users as $id)
 			{
-				if ($id["login"] == $login && $oldpw == $id["passwd"])
+				if ($id["login"] === $login && $oldpw === $id["passwd"])
 				{
 					$users[$i]["passwd"] = $newpw;
 					file_put_contents('../private/passwd', serialize($users));
