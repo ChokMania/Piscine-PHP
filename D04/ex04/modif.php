@@ -1,22 +1,18 @@
 <?php
-	// Utils
 	function in_array_r($needle, $haystack) {
 		foreach ($haystack as $item)
 			if ($item == $needle || (is_array($item) && in_array_r($needle, $item)))
 				return $haystack;
 		return false;
 	}
-	// Validation
 	if (!$_POST || !isset($_POST['submit']) || $_POST['submit'] !== "OK")
 		exit("ERROR\n");
 	if (!isset($_POST['login']) || $_POST['login'] == "" || !isset($_POST['oldpw']) || $_POST['oldpw'] == "" || !isset($_POST['newpw']) || $_POST['newpw'] == "")
 		exit("ERROR\n");
-	// Get users
 	$users = @file_get_contents('../private/passwd');
 	if (!$users)
 		exit("ERROR\n");
 	$users = unserialize($users);
-	// Find user
 	$found = false;
 	foreach ($users as $i => $user) {
 		if ($user['login'] != $_POST['login'])
@@ -28,9 +24,7 @@
 	}
 	if (!$found)
 		exit("ERROR\n");
-	// Save
 	file_put_contents('../private/passwd', serialize($users));
-	// OK
 	header('Location: index.html');
 	echo "OK\n";
 ?>
