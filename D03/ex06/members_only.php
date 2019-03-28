@@ -11,8 +11,7 @@
 	}
 	else
 	{
-		echo "Bonjour Zaz<br />\n<img src='data:image/png;base64,";
-		echo base64_encode($content = file_get_contents($img));
-		echo "'>\n</body></html>\n";
+		$img=base64_encode($content = file_get_contents($img));
+		echo "<html><body>\nBonjour Zaz<br />\n<img src='data:image/png;base64,$img'>\n</body></html>\n";
 	}
 ?>
