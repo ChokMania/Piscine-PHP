@@ -1,30 +1,31 @@
 <?php
-	function in_array_r($needle, $haystack) {
-		foreach ($haystack as $item)
-			if ($item == $needle || (is_array($item) && in_array_r($needle, $item)))
-				return $haystack;
-		return false;
+	if ($_POST['login'] === NULL || $_POST['newwd'] === NULL || $_POST['oldwd'] === NULL
+	|| $_POST['login'] === "" || $_POST['oldpw'] === "" || $_POST['newpw'] === ""
+	|| $_POST['passwd'] === "" || $_POST['submit'] !== "OK") {
+		exit ("ERROR\n");
 	}
-	if (!$_POST || !isset($_POST['submit']) || $_POST['submit'] !== "OK")
-		exit("ERROR\n");
-	if (!isset($_POST['login']) || $_POST['login'] == "" || !isset($_POST['oldpw']) || $_POST['oldpw'] == "" || !isset($_POST['newpw']) || $_POST['newpw'] == "")
-		exit("ERROR\n");
-	$users = @file_get_contents('../private/passwd');
-	if (!$users)
-		exit("ERROR\n");
-	$users = unserialize($users);
-	$found = false;
-	foreach ($users as $i => $user) {
-		if ($user['login'] != $_POST['login'])
-			continue;
-		if ($user['passwd'] !== hash('sha256', $_POST['oldpw']))
-			exit("ERROR\n");
-		$users[$i]['passwd'] = hash('sha256', $_POST['newpw']);
-		$found = true;
+
+	$login = $_POST["login"];
+	$oldpw = hash("sha512", $_POST["oldpw"]);
+	$newpw = hash("sha512", $_POST["newpw"]);
+	if (file_exists("../private/passwd"))
+	{
+		$users = unserialize(file_get_contents("../private/passwd"));
+		if ($users)
+		{
+			$i = 0;
+			foreach($users as $id)
+			{
+				if ($id["login"] === $login && $oldpw === $id["passwd"])
+				{
+					$users[$i]["passwd"] = $newpw;
+					file_put_contents('../private/passwd', serialize($users));
+					header('Location: index.html');
+					exit ("OK\n");
+				}
+				$i++;
+			}
+		}
 	}
-	if (!$found)
-		exit("ERROR\n");
-	file_put_contents('../private/passwd', serialize($users));
-	header('Location: index.html');
-	echo "OK\n";
+	exit ("ERROR\n");
 ?>

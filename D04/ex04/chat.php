@@ -6,8 +6,6 @@
 		<?php
 			date_default_timezone_set('Europe/Paris');
 			if (!file_exists('../private/chat')) {
-				if (!is_dir('../private'))
-					mkdir('../private');
 				file_put_contents('../private/chat', serialize([]));
 			}
 			$fd = fopen('../private/chat', 'r');
@@ -17,10 +15,10 @@
 				if (!$messages)
 					$messages = [];
 				flock($fd, LOCK_UN);
-				fclose($fd);
 			}
-			foreach ($messages as $message)
-				echo "<b>{$message['login']}:</b> {$message['msg']} <small><em>(" . date('H:i:s', $message['time']) . ")</em></small><br>";
+			fclose($fd);
+			foreach ($messages as $i)
+				echo "<small>" . date('H:i d/m/y', $i['time']) . "</small> . <b>{$i['login']}:</b> {$i['msg']}<br>";
 		?>
 	</body>
 </html>

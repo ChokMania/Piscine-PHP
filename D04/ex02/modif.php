@@ -1,6 +1,7 @@
 <?php
-	if (!$_POST['login'] || !$_POST['oldpw'] || !$_POST['newpw']
-	|| !$_POST['submit']|| !($_POST['submit'] === "OK")){
+	if ($_POST['login'] === NULL || $_POST['newwd'] === NULL || $_POST['oldwd'] === NULL
+	|| $_POST['login'] === "" || $_POST['oldpw'] === "" || $_POST['newpw'] === ""
+	|| $_POST['passwd'] === "" || $_POST['submit'] !== "OK") {
 		exit ("ERROR\n");
 	}
 	$login = $_POST["login"];

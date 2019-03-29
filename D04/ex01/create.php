@@ -1,7 +1,7 @@
 <?php
-	if ($_POST['login'] == NULL || $_POST['passwd'] == NULL || $_POST['submit'] !== "OK") {
-		echo "ERROR\n";
-		exit (1);
+	if ($_POST['login'] === NULL || $_POST['passwd'] === NULL || $_POST['login'] == ""
+	|| $_POST['passwd'] === "" || $_POST['submit'] !== "OK") {
+		exit ("ERROR\n");
 	}
 	if (!file_exists("../private"))
 		@mkdir("../private");

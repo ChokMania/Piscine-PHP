@@ -6,17 +6,11 @@
 	}
 ?>
 
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<title>Create account</title>
-	</head>
-	<body>
-		<form method="get" action=".">
-			Identifiant <input type="text" name="login" value ="<?php echo $_SESSION["login"] ?>" required/>
-			<br>
-			Mot de passe <input type="password" name="passwd" value = "<?php echo $_SESSION["passwd"] ?>" required/>
-			<input type="submit" name="submit" value="OK">
-		</form>
-	</body>
-</html>
+<html><body>
+<form method="get" action="index.php">
+   Identifiant: <input type="text" name="login" value ="<?php echo $_SESSION["login"] ?>"/>
+   <br />
+   Mot de passe: <input type="password" name="passwd" value = "<?php echo $_SESSION["passwd"] ?>"/>
+   <input type="submit" name="submit" value="OK">
+</form>
+</body></html>

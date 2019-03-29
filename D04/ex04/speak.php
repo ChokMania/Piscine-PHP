@@ -6,30 +6,29 @@ if ($_POST && isset($_POST['msg']) && $_POST['msg'] != "" && isset($_SESSION['lo
 			mkdir('../private');
 		file_put_contents('../private/chat', serialize([]));
 	}
-	$fd = fopen('../private/chat', 'r');
+	$fd = fopen('../private/chat', 'r+');
 	if (flock($fd, LOCK_EX)) {
 		$messages = unserialize(file_get_contents('../private/chat'));
 		if (!$messages)
 			$messages = [];
-		$messages[] = [
-			'login' => $_SESSION['loggued_on_user'],
-			'time' => time(),
-			'msg' => htmlentities($_POST['msg'])
-		];
+		$tmp['login'] = $_SESSION['loggued_on_user'];
+		$tmp['time'] = time();
+		$tmp['msg'] = $_POST['msg'];
+		$messages[] = $tmp;
 		file_put_contents('../private/chat', serialize($messages));
 		flock($fd, LOCK_UN);
-		fclose($fd);
 	}
+	fclose($fd);
 }
 ?>
-<!DOCTYPE html>
+
 <html>
 	<head>
+	</head>
+	<body>
 		<script language="javascript">
 			top.frames['chat'].location = 'chat.php';
 		</script>
-	</head>
-	<body>
 		<form action="" method="post">
 			<input type="text" name="msg" placeholder="Message">
 			<button type="submit">Envoyer le message</button>
