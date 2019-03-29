@@ -1,20 +1,21 @@
 <?php
-	function auth($login, $passwd) {
-		if (!$login || !$passwd || $login === "" || $passwd === "")
-			return false;
-		if (!file_exists('../private/passwd'))
+function	auth($login, $passwd)
+{
+if (file_exists("../private/passwd"))
+{
+	$passwd = hash("sha512", $passwd);
+	$users = unserialize(file_get_contents("../private/passwd"));
+	if ($users)
+	{
+		foreach($users as $id)
 		{
-			if (!file_exists("../private"))
-				mkdir('../private');
-			return false;
-		}
-		$user = unserialize(file_get_contents('../private/passwd'));
-		if ($user) {
-			foreach ($user as $id) {
-				if ($id['login'] === $login && $id['passwd'] === hash('sha512', $passwd))
-					return true;
+			if ($id["login"] == $login && $passwd == $id["passwd"])
+			{
+				return (TRUE);
 			}
 		}
-		return false;
 	}
+}
+return (FALSE);
+}
 ?>

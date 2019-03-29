@@ -1,37 +1,60 @@
 <?php
+
 session_start();
-if ($_POST && isset($_POST['msg']) && $_POST['msg'] != "" && isset($_SESSION['loggued_on_user']) && $_SESSION['loggued_on_user'] != "") {
-	if (!file_exists('../private/chat')) {
-		if (!is_dir('../private'))
-			mkdir('../private');
-		file_put_contents('../private/chat', serialize([]));
+$file = "../private/chat";
+if ($_POST && $_POST['msg'] && $_POST['submit'] == "OK"
+	&& $_SESSION["loggued_on_user"] != "")
+{
+	$login = $_SESSION["loggued_on_user"];
+	$message = $_POST["msg"];
+	$time = time();
+	if (file_exists($file))
+	{
+		$messagedb = unserialize(file_get_contents($file));
 	}
-	$fd = fopen('../private/chat', 'r+');
-	if (flock($fd, LOCK_EX)) {
-		$messages = unserialize(file_get_contents('../private/chat'));
-		if (!$messages)
-			$messages = [];
-		$tmp['login'] = $_SESSION['loggued_on_user'];
-		$tmp['time'] = time();
-		$tmp['msg'] = $_POST['msg'];
-		$messages[] = $tmp;
-		file_put_contents('../private/chat', serialize($messages));
+	else
+	{
+		file_put_contents("$file", "");
+	}
+	$new_message["login"] = $login;
+	$new_message["time"] = $time;
+	$new_message["msg"] = $message;
+	if ($new_message["msg"] === "/joke")
+	{
+		$new_message['login'] = "Console";
+		$new_message['msg'] = ft_joke();
+	}
+	$messagedb[] = $new_message;
+	$fd = fopen($file, "w");
+	if (flock($fd, LOCK_EX))
+	{
+		file_put_contents($file, serialize($messagedb));
 		flock($fd, LOCK_UN);
 	}
 	fclose($fd);
 }
+
+function	ft_joke()
+{
+	$rand = rand(0, 3);
+	if ($rand == 0)
+		$joke = "Quelle mamie fait peur aux voleurs ?<br />Mamie Traillette";
+	if ($rand == 1)
+		$joke = "J'ai une blague sur les magasins<br />Mais elle a pas supermarché";
+	if ($rand == 2)
+		$joke = "Pourquoi est-ce c'est difficile de conduire dans le Nord ?<br />Parce que les voitures arrêtent PAS DE CALER";
+	if ($rand == 3)
+		$joke = "Comment est-ce que la chouette sait que son mari fait la gueule ?<br />Parce qu’HIBOUDE";
+	return ($joke);
+}
 ?>
 
-<html>
-	<head>
-	</head>
-	<body>
-		<script language="javascript">
-			top.frames['chat'].location = 'chat.php';
-		</script>
-		<form action="" method="post">
-			<input type="text" name="msg" placeholder="Message">
-			<button type="submit">Envoyer le message</button>
+<html lang="fr">
+<head>
+</head>
+		<script langage="javascript">top.frames['chat'].location = 'chat.php';</script>
+		<form method="post" action="">
+			<input style='width:50%; height:100%' type="text" name="msg" autofocus placeholder="Ecrire ici"/>
+			<input style='width:50px; height:30px'type="submit" name="submit" value="OK">
 		</form>
-	</body>
 </html>

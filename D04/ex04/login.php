@@ -1,24 +1,26 @@
 <?php
-	session_start();
-	require 'auth.php';
-	$_SESSION['loggued_on_user'] = "";
-	if (!$_POST['login'] || $_POST['login'] === "" || !$_POST['passwd']
-	|| !$_POST['passwd'] || !auth($_POST['login'], $_POST['passwd']))
-		exit ("ERROR\n");
-	$_SESSION['loggued_on_user'] = $_POST['login'];
+
+include	'auth.php';
+
+$login = $_POST['login'];
+$passwd = $_POST['passwd'];
+session_start();
+if (!auth($login, $passwd))
+{
+	$_SESSION["loggued_on_user"] = "";
+	exit ("ERROR\n");
+}
+else
+{
+	$_SESSION["loggued_on_user"] = $login;
+
+}
 ?>
 
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<title>42chat</title>
-	</head>
-	<body>
-		<h1>
-			42chat
-		</h1>
+<html>
+	<body style='background-color:grey'>
 		<a href="logout.php" style="float: right">Se déconnecter</a>
-		<iframe name="chat" src="chat.php" width="100%" height="550px"></iframe>
-		<iframe name="speak" src="speak.php" width="100%" height="50px"></iframe>
+		<iframe style='background-color:lightgrey' name="chat" src="chat.php" width="100%" height="550px" scrolling="auto" frameborder="0" margin-top:-4px; margin-left:-4px;></iframe>
+		<iframe style='background-color:white' name="speak" src="speak.php" width="100%" height="50px"></iframe>
 	</body>
 </html>
