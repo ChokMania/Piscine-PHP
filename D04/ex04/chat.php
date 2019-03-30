@@ -1,5 +1,7 @@
 <?php
 session_start();
+if ($_SESSION["loggued_on_user"] === "")
+	exit ("ERROR/n");
 date_default_timezone_set("Europe/Paris");
 $file = "../private/chat";
 $clear = 0;
@@ -66,13 +68,13 @@ if (file_exists($file))
 			{
 				$color2 = $color; 
 				if ($message['login'] !== "Console")
-					echo "<small>" . date("d/m/y h:i", $message['time']) . "</small> ";
+					echo date("[h:i] ", $message["time"]);
 				else
 					$color2 = "red";
 				if ($setcolor == 1)
 					echo "<span style='color:$color2'>";
 				echo "<b>" . $message['login'] . "</b>: ";
-				echo $message['msg'] . "<br />";
+				echo $message['msg'] . "<br />\n";
 				if ($setcolor == 1)
 					echo "</span>";
 			}

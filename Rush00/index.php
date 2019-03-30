@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['nb_tot'] = "0";
 ?>
 <html lang="fr">
 	<head>

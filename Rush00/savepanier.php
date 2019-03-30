@@ -1,13 +1,13 @@
 <?php
 	session_start();
-	if (!($_POST['archiver'] === "Valider"))
-		exit ("ERROR\n");
+	$_SESSION['VALIDER'] = "OUI";
 	if (empty($_SESSION['loggued_on_user']))
 	{
+		$_SESSION['log'] = "NON";
 		header("Location: http://localhost:8080/auth.php");
-		exit("QUIT");
+		exit("ERROR");
 	}
-	else if ($_SESSION['nb_tot'] !== "0" ){
+	if ($_SESSION['nb_tot'] !== "0" ){
 		$users = unserialize(file_get_contents(".private/passwd"));
 		$i = 0;
 		foreach($users as $id)
@@ -17,14 +17,15 @@
 				$users[$i]["article"][] = $_SESSION['article'];
 				file_put_contents('.private/passwd', serialize($users));
 				header("Location: http://localhost:8080/index.php");
-				print_r($users[$i]["article"]);
 				unset($_SESSION['article']);
+				array_values($_SESSION);
 				$_SESSION['nb_tot'] = "0";
-				print_r($_SESSION);
+				$_SESSION['VALIDER'] = "";
 				exit("OK");
 			}
 			$i++;
 		}
 	}
+$_SESSION['VALIDER'] = "";
 header("Location: http://localhost:8080/index.php");
 ?>

@@ -1,6 +1,7 @@
 <?php
-
 session_start();
+if ($_SESSION["loggued_on_user"] === "")
+	exit ("ERROR\n");
 $file = "../private/chat";
 if ($_POST && $_POST['msg'] && $_POST['submit'] == "OK"
 	&& $_SESSION["loggued_on_user"] != "")
