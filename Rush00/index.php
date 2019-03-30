@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
@@ -7,7 +10,7 @@
 		<link rel="shortcut icon" href="#">
 	</head>
 	<body id="home">
-		<?php include("menu.html"); ?>
+		<?php include("menu.php"); ?>
 		<article>
 			<h2>Dernieres News du site</h2>
 			<p>Metuentes igitur idem latrones Lycaoniam magna parte campestrem cum se inpares nostris fore congressione stataria documentis frequentibus scirent, tramitibus deviis petivere Pamphyliam diu quidem intactam sed timore populationum et caedium, milite per omnia diffuso propinqua, magnis undique praesidiis conmunitam.</p>
@@ -22,8 +25,8 @@
 			</ul>
 		</article>
 		<footer>
-			<p>Copyright &copy;2019 Judumay : <a href="https://github.com/ChokMania">Github</a></p>
 		</footer>
 		</div>
 	</body>
 </html>
+

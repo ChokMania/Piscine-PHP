@@ -10,16 +10,21 @@ fieldset {
 	margin-top: 15px;
 }
 
+.little {
+	font-size: 10px;
+	margin-left: 50px;
+}
+
 #menu {
 	height: 0;
 	overflow: hidden;
 	transition: height 1.5s;
-	margin-top: 50px;
-	width: 175px;
+	margin-top: 75px;
+	width: 210px;
 }
 
 #menu:target {
-	height: 201px;
+	height: 250px;
 }
 
 #fermer {
@@ -34,7 +39,7 @@ fieldset {
 		height: 0;
 		overflow: hidden;
 		transition: height 1.5s;
-		margin-top: 50px;
+		margin-top: 75px;
 		width: 0px;
 	}
 	#menu:target {
