@@ -3,7 +3,11 @@ session_start();
 if (!($_POST['submit'] === "Supprimer") && !($_POST['submit'] === "Ajouter") 
     && !($_POST['submit'] === "Modifier"))
         exit(header("Location: index.php"));
-
+if ($_POST['user'] === "" || $_POST['ad_pw'] === "" || $_POST['mod_pw'])
+{
+    $_SESSION['error'] = "Champ vide.";
+    exit(header("Location: admin.php"));
+}
 $login = $_POST['user'];
 $ad_pw = hash("sha512", $_POST["ad_pw"]);
 $mod_pw = hash("sha512", $_POST["mod_pw"]);
@@ -15,11 +19,11 @@ if (file_exists(".private/passwd"))
 		$i = 0;
 		foreach($users as $id)
 		{
-			if ($id["login"] == $login)
+			if ($id["login"] === $login)
 			{
-                if ($_POST['submit'] == "Supprimer")
+                if ($_POST['submit'] === "Supprimer")
                 {
-                    if ($id['login'] == $_SESSION['loggued_on_user'])
+                    if ($id['login'] === $_SESSION['loggued_on_user'])
                     {
                         $_SESSION['error'] = "Vous utilisez actuellement cet utilisateur.";
 			    	    exit(header("Location: admin.php"));
@@ -47,8 +51,13 @@ if (file_exists(".private/passwd"))
             }
             $i++;
         }
-        if ($_POST['submit'] == "Ajouter")
+        if ($_POST['submit'] === "Ajouter")
         {
+            if ($login === "" || $ad_pw === "")
+            {
+                $_SESSION['error'] = "Champ vide.";
+               header("Location: admin.php");
+            }
             $new_user["login"] = $login;
             $new_user["passwd"] = $ad_pw;
             $users[] = $new_user;

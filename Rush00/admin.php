@@ -51,10 +51,8 @@
 	</head>
 	<body>			
 		<?php include("menu.php") ?>
-		<div class="boxe">
-			<br>
-			<h1>Utilisateur</h1>
-			<?php
+		<br>
+		<?php
 				if ($_SESSION['ok'])
 				{
 					echo "<p style='color:green; text-align:center;'>" . $_SESSION['ok'] . "</p></center>";
@@ -65,7 +63,10 @@
 					echo "<p style='color:red; text-align:center;'>" . $_SESSION['error'] . "</p></center>";
 					unset($_SESSION['error']);
 				}
-			?>
+		?>
+		<div class="boxe">
+			<br>
+			<h1>Utilisateur</h1>
 			<form method="post" action="user.php">
 				<label>Utilisateur à supprimer: </label><input type="text" name="user" placeholder="Entrez Ici" value="">
 				<input style='width:20%' type="submit" name="submit" value="Supprimer">		
