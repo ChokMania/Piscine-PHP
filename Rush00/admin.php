@@ -73,12 +73,12 @@
 			</form>
 			<form method="post" action="user.php">
 				<label>Utilisateur à ajouter: </label><input type="text" name="user" placeholder="Entrez Ici" value="">
-				<label>Mot de passe: </label><input type="text" name="ad_pw" placeholder="Entrez Ici" value="">
+				<label>Mot de passe: </label><input type="password" name="ad_pw" placeholder="Entrez Ici" value="">
 				<input style='width:20%' type="submit" name="submit" value="Ajouter">
 			</form>
 			<form method="post" action="user.php">
 				<label>Utilisateur: </label><input type="text" name="user" placeholder="Entrez Ici" value="">
-				<label>Mot de passe a modifer: </label><input type="text" name="mod_pw" placeholder="Entrez Ici" value="">
+				<label>Mot de passe a modifer: </label><input type="password" name="mod_pw" placeholder="Entrez Ici" value="">
 				<input style='width:20%' type="submit" name="submit" value="Modifier">
 				<a href="./list.php"> Liste des Utilisateurs</a>
 		</form>
@@ -111,7 +111,11 @@
 		</div>
 		<div class="boxe">
 			<br>
-			<h1>Commandes clients</h1>	
+			<h1>Commandes clients</h1>
+			<form method="post" action="commandes.php">
+				<label>Utilisateur à checker: </label><input type="text" name="login" placeholder="Entrez Ici" value="">
+				<input style='width:20%' type="submit" name="submit" value="OK">
+			</form>
 		</div>
 	</body>
 </html>

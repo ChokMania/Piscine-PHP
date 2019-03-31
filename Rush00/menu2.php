@@ -8,7 +8,7 @@ function display_item($item)
 	echo '
 	<tr>
 		<th> <img id="imge" src="' . $item[3] . '" /><br></th> 
-		<td><h1>' . $item[0] . '</h1><p>' . $item[1] . '<br>Prix: ' . $item[2]. ' euros</p>
+		<th><h1>' . $item[0] . '</h1><p>' . $item[1] . '<br>Prix: ' . $item[2]. ' euros</p>
 		<form method="post" action=panieradd.php>
 			<input type="hidden" name="name" value="' . $item[0] . '"></input>
 			<input type="hidden" name="prix" value="' . $item[2] . '"></input>
@@ -16,8 +16,8 @@ function display_item($item)
 			<input type="text" name="nb" value="1" maxlength="2"></input>
 			<input type="image" src="https://pngimage.net/wp-content/uploads/2018/06/logo-panier-png-1.png" name="submit" value="OK">
 		</form>
-		</td>
-	</tr>';
+		</th>
+		</tr>';
 }
 
 function display_cat()
@@ -93,8 +93,8 @@ function display_cat()
 				font-size: 20px;
 				margin-left: 10px;
 			}
-			td {
-				border: 2px solid grey;
+			th {
+				border-bottom: 1px solid grey;"
 			}
 			#imge {
 				width: 30vmax;
