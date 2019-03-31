@@ -27,6 +27,7 @@
 	{
 		
 		$_SESSION["loggued_on_user"] = "";
+		$_SESSION['VALIDER'] === "";
 		exit ("ERROR\n");
 	}
 	else
@@ -34,12 +35,13 @@
 	if ($_SESSION['log'] === "NON" && $_SESSION['VALIDER'] === "OUI")
 	{
 		$_SESSION['log'] = "OUI";
-		header("Location: http://localhost:8080/savepanier.php");
+		header("Location: savepanier.php");
 		exit("ICI\n");
 	}
 	else {
-		$_SESSION['nb_tot'] = "0";
-		header("Location: http://localhost:8080/index.php");
+		$_SESSION['VALIDER'] === "";
+		header("Location: index.php");
 	}
+	print_r ($_SESSION);
 	exit("OK\n");
 ?>

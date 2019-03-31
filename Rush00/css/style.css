@@ -128,8 +128,6 @@ a.to_nav:focus {
 	border: none;
 }
 .price{
-	padding: 2 2 2 2;
-	border: 2px solid lightgrey;
 	font-size: 10px;
 }
 
@@ -159,21 +157,22 @@ footer {
 
 	#primary_nav {
 		position: absolute;
-		top: 20px;
+		top: 30px;
 		right: 10px;
 		background: none;
 	}
-
+	
 	#primary_nav li {
 		display: inline;
 	}
-
+	
 	#primary_nav li a {
+		margin-right: px;
 		float: left;
 		border: none;
 		padding: 0 10px;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
-		border-radius: 2px;
+		border-radius: 3px;
 	}
 }

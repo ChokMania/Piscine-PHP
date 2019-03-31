@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
@@ -13,10 +12,7 @@
 				<fieldset>
 					<nav id="primary_nav">
 					<ul>
-						<li><a href="spaceship.php">Fusée</a></li>
-						<li><a href="cars.php">Voiture</a></li>
-						<li><a href="flame.php">Lance-Flammes</a></li>
-						<div style="font-size:12px">
+						<div style="font-size:15px">
 							<?php
 							if (!$_SESSION["loggued_on_user"]) {
 								echo '<li><a href="auth.php">Login</a></li>';
@@ -24,6 +20,8 @@
 							else {
 								echo '<li><a href="modif.html">Compte</a></li>';
 								echo '<li><a href="logout.php">Logout</a></li>';
+								if ($_SESSION["loggued_on_user"] === "root")
+								echo '<li><a href="admin.php">Admin</a></li>';
 							}
 							?>
 						<li><a href="panier.php"><span class="price">
@@ -31,10 +29,10 @@
 							<?php
 								if ($_SESSION['article']){
 									echo '<span class="price">';
-										foreach ($_SESSION['article'] as $prix)
-											$i += $prix['prix'];
-										echo $i . "€";
-									}
+									foreach ($_SESSION['article'] as $prix)
+									$i += $prix['prix'];
+									echo $i . "€";
+								}
 								?>
 							</span>
 						</a></li>

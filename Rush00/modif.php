@@ -20,7 +20,7 @@ if (file_exists(".private/passwd"))
 			{
 				$users[$i]["passwd"] = $newpw;
 				file_put_contents('.private/passwd', serialize($users));
-				header("Location: http://localhost:8080/index.php");
+				header("Location: index.php");
 				exit("OK");
 			}
 			$i++;

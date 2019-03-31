@@ -6,7 +6,7 @@ if (!$_POST['login'] || !$_POST['passwd']
 }
 $login = $_POST["login"];
 $pwd = hash("sha512", $_POST["passwd"]);
-if (file_exists("../private/passwd"))
+if (file_exists(".private/passwd"))
 {
 	$users = unserialize(file_get_contents(".private/passwd"));
 	if ($users)
@@ -22,5 +22,5 @@ $new_user["login"] = $login;
 $new_user["passwd"] = $pwd;
 $users[] = $new_user;
 file_put_contents(".private/passwd", serialize($users));
-header("Location: http://localhost:8080/auth.php");
+header("Location: auth.php");
 ?>

@@ -14,8 +14,6 @@
 				<input type="submit" name="submit" value="OK">
 			</form>
 		<br>
-		<a href="modif.html">Modification ID</a>
-		<br>
 		<a href="create.html">Creation nouvel utilisateur</a>
 		<br>
 		</center>
