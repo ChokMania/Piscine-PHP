@@ -37,7 +37,7 @@
 								?>
 							</span>
 						</a></li>
-						<a href="#" id="fermer">fermer</a>
+						<a href="#"><img id='fermer' src ="https://sautter-pomor.fr/wp-content/uploads/2016/11/grey_arrow.png" alt="fermer"></a>
 						</div>
 					</ul>
 					</nav>

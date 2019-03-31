@@ -13,7 +13,7 @@ function display_item($item)
 			<input type="hidden" name="name" value="' . $item[0] . '"></input>
 			<input type="hidden" name="prix" value="' . $item[2] . '"></input>
 			<input type="hidden" name="img" value="' . $item[3] . '"></input>
-			<input type="text" name="nb" value=""></input>
+			<input type="text" name="nb" value="1" maxlength="2"></input>
 			<input type="image" src="https://pngimage.net/wp-content/uploads/2018/06/logo-panier-png-1.png" name="submit" value="OK">
 		</form>
 		</td>
