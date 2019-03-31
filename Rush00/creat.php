@@ -44,7 +44,7 @@
 	</header>
 		<div class="boxe">
 			<br>
-			<h1>Connexion</h1>
+			<h1>Création d'un utilisateur.</h1>
 			<?php
 				if ($_SESSION['ok'])
 				{
@@ -57,13 +57,13 @@
 					unset($_SESSION['error']);
 				}
 			?>
-			<form method="post" action="login.php">
-				Identifiant <input type="text" name="login"/>
-				Mot de passe <input type="password" name="passwd"/>
-				<br/>
-				<input style='width:20%;' type="submit" name="submit" value="OK">
-			</form>
-			<a href="creat.php">Creation nouvel utilisateur</a>
-			</div>
+		<form method="post" action="create.php">
+			Identifiant <input type="text" name="login" placeholder="enter your username"/>
+			<br>
+			Mot de passe <input type="password" name="passwd" placeholder="enter your password"/>
+			<br>
+			<input style='width:15%;' type="submit" name="submit" value="OK">
+		</form>
+		</div>
 	</body>
 </html>

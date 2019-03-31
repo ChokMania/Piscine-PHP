@@ -1,5 +1,5 @@
 <?php 
-	session_start();
+session_start();
 ?>
 <html lang="fr">
 	<head>
@@ -7,7 +7,6 @@
 		<title>Localshop</title>
 		<meta name="description" content="Mini site e-commerce">
 		<link rel="stylesheet" href="css/style.css"/>
-		<link rel="stylesheet" href="css/menu.css"/>
 		<link rel="shortcut icon" href="#">
 		<style>
 			.boxe {
@@ -20,8 +19,8 @@
 				min-width: 330px;
 				margin-top: 20px;
 				border-radius: 10px 10px;
-				padding-bottom: 10px;
-				text-align:center;
+				padding-bottom: 20px;
+				padding-top: 15px;
 			}
 			
 			h1 {
@@ -36,16 +35,12 @@
 			form input{
 				width: 300px;
 			}
-			</style>
+		</style>
 	</head>
-	<body>
-	<header>
-			<h1 style='padding-bottom:15px;' class="logo"><a href="index.php">LocalShop</a></h1>
-	</header>
-		<div class="boxe">
-			<br>
-			<h1>Connexion</h1>
-			<?php
+	<body>			
+		<?php include("menu.php"); ?>
+		<br>
+		<?php
 				if ($_SESSION['ok'])
 				{
 					echo "<p style='color:green; text-align:center;'>" . $_SESSION['ok'] . "</p></center>";
@@ -56,14 +51,25 @@
 					echo "<p style='color:red; text-align:center;'>" . $_SESSION['error'] . "</p></center>";
 					unset($_SESSION['error']);
 				}
-			?>
-			<form method="post" action="login.php">
-				Identifiant <input type="text" name="login"/>
-				Mot de passe <input type="password" name="passwd"/>
-				<br/>
-				<input style='width:20%;' type="submit" name="submit" value="OK">
-			</form>
-			<a href="creat.php">Creation nouvel utilisateur</a>
-			</div>
+		?>
+		<div class="boxe">
+			<br>
+			<h1>Modification du mot de passe</h1>
+			<form method="post" action="modif.php">
+			Ancien mot de passe :<input type="password" name="oldpw" placeholder="enter your actual password"/>
+			Nouveau mot de passe :<input type="password" name="newpw" placeholder="enter your new password"/>
+			<br>
+			<input style='width:20%;' type="submit" name="submit" value="OK">
+		</form>
+		</div>
+		<div class="boxe">
+			<br>
+			<h1>Suppression du compte.</h1>
+			<form method="post" action="sup.php">
+			Mot de passe :<input type="password" name="pwd" placeholder="enter your password"/>
+			<br>
+			<input style='width:20%;' type="submit" name="submit" value="OK">
+		</form>
+		</div>
 	</body>
 </html>

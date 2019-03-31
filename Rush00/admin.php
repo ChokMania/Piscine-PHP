@@ -13,7 +13,7 @@
 	}
 	if (!check($_SESSION['loggued_on_user']))
 		header("Location: index.php");
-	?>
+?>
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
@@ -84,7 +84,29 @@
 		</div>
 		<div class="boxe">
 		<br>
-			<h1>Articles/Categories</h1>	
+			<h1>Articles/Categories</h1>
+			<form method="post" action="csv.php">
+				<label>Article à supprimer: </label><input type="text" name="supp_art" placeholder="Entrez Ici" value="">
+				<input style='width:20%' type="submit" name="submit" value="Supp Article">
+			</form>
+			<form method="post" action="csv.php">
+				<label>Categorie à supprimer: </label><input type="text" name="supp_cat" placeholder="Entrez Ici" value="">
+				<input style='width:20%' type="submit" name="submit" value="Supp Categorie">
+			</form>
+			<form method="post" action="csv.php">
+				<label>Article a ajouté: </label><input type="text" name="article" placeholder="Entrez Ici" value="">
+				<label>Description: </label><input type="text" name="description" placeholder="Entrez Ici" value="">
+				<label>Prix: </label><input type="text" name="prix" placeholder="Entrez Ici" value="">
+				<label>Lien Image: </label><input type="text" name="image" placeholder="Entrez Ici" value="">
+				<label>Categorie: </label><input type="text" name="categorie" placeholder="Entrez Ici" value="">
+				<input style='width:20%' type="submit" name="submit" value="Ajouter Produit">
+			</form>
+			<form method="post" action="csv.php">
+				<label>Categorie à ajouter: </label><input type="text" name="ajout_cat" placeholder="Entrez Ici" value="">
+				<input style='width:20%' type="submit" name="submit" value="Ajout Categorie">
+			</form>
+		</div>
+			
 		</div>
 		<div class="boxe">
 			<br>

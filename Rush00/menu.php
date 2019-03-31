@@ -19,7 +19,7 @@
 								echo '<li><a href="auth.php">Login</a></li>';
 							}
 							else {
-								echo '<li><a href="modif.html">Compte</a></li>';
+								echo '<li><a href="mod.php">Compte</a></li>';
 								echo '<li><a href="logout.php">Logout</a></li>';
 								if (check_root($_SESSION["loggued_on_user"]))
 									echo '<li><a href="admin.php">Admin</a></li>';

@@ -20,12 +20,13 @@ if (file_exists(".private/passwd"))
 			{
 				$users[$i]["passwd"] = $newpw;
 				file_put_contents('.private/passwd', serialize($users));
-				header("Location: index.php");
-				exit("OK");
+				$_SESSION['ok'] = "Mot de passe modifié.";
+				exit(header("Location: index.php"));
 			}
 			$i++;
 		}
 	}
-	exit("ERROR");
+	$_SESSION['error'] = "Ancien mot de passe incorrect.";
+	exit(header("Location: mod.php"));
 }
 ?>

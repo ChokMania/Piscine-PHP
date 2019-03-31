@@ -1,8 +1,10 @@
 <?php
+session_start();
 if (!$_POST['login'] || !$_POST['passwd']
 	|| !$_POST['submit']|| !($_POST['submit'] === "OK"))
 {
-	exit ("ERROR\n");
+	$_SESSION['error'] = "Champ manquant.";
+	exit (header("Location: creat.php"));
 }
 $login = $_POST["login"];
 $pwd = hash("sha512", $_POST["passwd"]);
@@ -13,7 +15,10 @@ if (file_exists(".private/passwd"))
 	{
 		foreach($users as $id)
 			if ($id["login"] == $login)
-				exit ("ERROR\n");
+			{
+				$_SESSION['error'] = "Utilisateur déjà existant.";
+				exit (header("Location: creat.php"));
+			}
 	}
 }
 if(!file_exists(".private"))
@@ -22,5 +27,6 @@ $new_user["login"] = $login;
 $new_user["passwd"] = $pwd;
 $users[] = $new_user;
 file_put_contents(".private/passwd", serialize($users));
-header("Location: auth.php");
+$_SESSION['ok'] = "Utilisateur créé.";
+exit(header("Location: auth.php"));
 ?>
