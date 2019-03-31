@@ -48,10 +48,7 @@ function display_cat()
 		<link rel="stylesheet" href="css/panier.css"/>
 		<style>
 			ul{
-				min-width: 350px;
-				width: 45%;
 				list-style: none;
-				padding: 0;
 			}
 
 			.cattitle{
