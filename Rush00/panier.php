@@ -7,48 +7,8 @@ session_start();
 		<title>Localshop</title>
 		<meta name="description" content="Mini site e-commerce">
 		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/panier.css"/>
 		<link rel="shortcut icon" href="#">
-		<style>
-		.boxe {
-			position: relative;
-			background-color: lightgrey;
-			width: 500px;
-			height: 200px;
-			box-shadow: 5px 5px lightblue;
-			}
-		h3{
-			text-align: center;
-		}
-
-		p {
-			margin-left: 270px;
-		}
-		img {
-			float: left;
-			margin-top: 16px;
-			width : 250px;
-		}
-		input[type=submit] {
-			padding:5px 15px; 
-			-webkit-border-radius: 5px;
-			border-radius: 5px; 
-		}
-		input[type=image] {
-			width: 15px;
-			float: right;
-			margin-right: 5px;
-			margin-top: -20px;
-		}
-		#moins {
-			width: 20px;
-			margin-top: -46px;
-			margin-right: 30px;
-		}
-		#plus {
-			width: 16px;
-			margin-top: -44px;
-		}
-		</style>
 	</head>
 	<body>
 		<?php include("menu.php"); ?>
