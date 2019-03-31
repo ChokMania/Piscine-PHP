@@ -67,10 +67,10 @@ if ($_SESSION['VALIDER'] === "OUI")
 				</tr>
 				<tr>
 					<th> <img id="imge" src="https://www.fromspacewithlove.com/wp-content/uploads/2018/05/falcon-9.png" /><br></th> 
-					<td><h1>Falcon 9</h1><p>Grande fusée pour faire des petits voyages<br>Prix: 99.99 euros</p>
+					<td><h1>Falcon 9</h1><p>Grande fusée pour faire des petits voyages<br>Prix: 9999.99 euros</p>
 					<form method="post" action=panieradd.php>
 						<input type="hidden" name="name" value="Falcon 9"></input>
-						<input type="hidden" name="prix" value="99.99"></input>
+						<input type="hidden" name="prix" value="9999.99"></input>
 						<input type="hidden" name="img" value="https://www.fromspacewithlove.com/wp-content/uploads/2018/05/falcon-9.png"></input>
 						<input type="image" src="https://pngimage.net/wp-content/uploads/2018/06/logo-panier-png-1.png">
 					</form>

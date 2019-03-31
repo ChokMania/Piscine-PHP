@@ -14,17 +14,18 @@
 					<ul>
 						<div style="font-size:15px">
 							<?php
+							include 'function.php';
 							if (!$_SESSION["loggued_on_user"]) {
 								echo '<li><a href="auth.php">Login</a></li>';
 							}
 							else {
 								echo '<li><a href="modif.html">Compte</a></li>';
 								echo '<li><a href="logout.php">Logout</a></li>';
-								if ($_SESSION["loggued_on_user"] === "root")
-								echo '<li><a href="admin.php">Admin</a></li>';
+								if (check_root($_SESSION["loggued_on_user"]))
+									echo '<li><a href="admin.php">Admin</a></li>';
 							}
 							?>
-						<li><a href="panier.php"><span class="price">
+							<li><a href="panier.php"><span class="price">
 							<?php echo $_SESSION['nb_tot'];?></span> Panier
 							<?php
 								if ($_SESSION['article']){

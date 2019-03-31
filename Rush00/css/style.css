@@ -144,7 +144,7 @@ footer {
 	font-size: 14px;
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 700px) {
 	a.to_nav {
 		display: none;
 	}
@@ -164,10 +164,10 @@ footer {
 	
 	#primary_nav li {
 		display: inline;
+
 	}
 	
 	#primary_nav li a {
-		margin-right: px;
 		float: left;
 		border: none;
 		padding: 0 10px;

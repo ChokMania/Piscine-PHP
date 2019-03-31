@@ -50,7 +50,7 @@ session_start();
 		}
 		</style>
 	</head>
-	<body id="home">
+	<body>
 		<?php include("menu.php"); ?>
 		<h1>Vos Articles</h1>
 		<?php

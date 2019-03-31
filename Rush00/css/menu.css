@@ -20,7 +20,7 @@ fieldset {
 	overflow: hidden;
 	transition: height 1.5s;
 	margin-top: 75px;
-	width: 210px;
+	width: 250px;
 }
 
 #menu:target {
@@ -31,7 +31,7 @@ fieldset {
 	width: 15%;
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 700px) {
 	header { border-bottom: 1px solid black;}
 	header p {text-align: right;}
 
