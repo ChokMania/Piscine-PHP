@@ -59,7 +59,7 @@ session_start();
 	if (!($_POST['submit'] === "OK"))
 		exit(header("Location: admin.php"));
 	if (!(file_exists('.private/panier'))) {
-		echo "<p style='color:red; text-align:center;'> Utilisateur introuvable.</p><br><center><a href='./admin.php'>Retour </a></center>";
+		echo "<p style='color:red; text-align:center;'> Utilisateur introuvable.</p><br><br><center><a href='./admin.php'>Retour </a></center>";
 		exit();
 	}
 	$users = unserialize(file_get_contents(".private/panier"));

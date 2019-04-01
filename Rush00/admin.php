@@ -91,19 +91,19 @@
 				<input style='width:20%' type="submit" name="submit" value="Supp Article">
 			</form>
 			<form method="post" action="csv.php">
-				<label>Categorie à supprimer: </label><input type="text" name="supp_cat" placeholder="Entrez Ici" value="">
+				<label>Catégorie à supprimer: </label><input type="text" name="supp_cat" placeholder="Entrez Ici" value="">
 				<input style='width:20%' type="submit" name="submit" value="Supp Categorie">
 			</form>
 			<form method="post" action="csv.php">
-				<label>Article a ajouté: </label><input type="text" name="article" placeholder="Entrez Ici" value="">
+				<label>Article à ajouter: </label><input type="text" name="article" placeholder="Entrez Ici" value="">
 				<label>Description: </label><input type="text" name="description" placeholder="Entrez Ici" value="">
 				<label>Prix: </label><input type="text" name="prix" placeholder="Entrez Ici" value="">
 				<label>Lien Image: </label><input type="text" name="image" placeholder="Entrez Ici" value="">
-				<label>Categorie: </label><input type="text" name="categorie" placeholder="Entrez Ici" value="">
+				<label>Catégorie: </label><input type="text" name="categorie" placeholder="Entrez Ici" value="">
 				<input style='width:20%' type="submit" name="submit" value="Ajouter Produit">
 			</form>
 			<form method="post" action="csv.php">
-				<label>Categorie à ajouter: </label><input type="text" name="ajout_cat" placeholder="Entrez Ici" value="">
+				<label>Catégorie à ajouter: </label><input type="text" name="ajout_cat" placeholder="Entrez Ici" value="">
 				<input style='width:20%' type="submit" name="submit" value="Ajout Categorie">
 			</form>
 		</div>
@@ -113,7 +113,7 @@
 			<br>
 			<h1>Commandes clients</h1>
 			<form method="post" action="commandes.php">
-				<label>Utilisateur à checker: </label><input type="text" name="login" placeholder="Entrez Ici" value="">
+				<label>Nom utilisateur: </label><input type="text" name="login" placeholder="Entrez Ici" value="">
 				<input style='width:20%' type="submit" name="submit" value="OK">
 			</form>
 		</div>
