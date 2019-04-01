@@ -1,3 +1,3 @@
-SELECT titre AS Titre, resum as Resume, annee_prod FROM film
-INNER JOIN genre ON film.id_genre = genre.id_genre WHERE genre.nom ='erotic'
-ORDER BY annee_prod DESC;
+SELECT `title` AS `Title`, `summary` as `Summary`, `prod_year` FROM `film`
+INNER JOIN `genre` ON `film`.`id_genre` = `genre`.`id_genre` WHERE `genre`.`name` = 'erotic'
+ORDER BY `prod_year` DESC;

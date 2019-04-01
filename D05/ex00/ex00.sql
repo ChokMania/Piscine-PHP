@@ -1,1 +1,1 @@
-CREATE DATABASE db_judumay;
+CREATE DATABASE `db_judumay`;

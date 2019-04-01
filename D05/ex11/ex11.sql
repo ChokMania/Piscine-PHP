@@ -1,5 +1,5 @@
-SELECT UPPER(fiche_personne.nom) as NOM, fiche_personne.prenom, abonnement.prix FROM membre
-INNER JOIN abonnement ON abonnement.id_abo = membre.id_abo
-INNER JOIN fiche_personne ON membre.id_membre = fiche_personne.id_perso
-WHERE abonnement.prix > 42
-ORDER BY fiche_personne.nom, fiche_personne.prenom;
+SELECT UPPER(`user_card`.`last_name`) as `NAME`, `user_card`.`first_name`, `subscription`.`price` FROM `member`
+INNER JOIN `subscription` ON `subscription`.`id_sub` = `member`.`id_sub`
+INNER JOIN `user_card` ON `member`.`id_member` = `user_card`.`id_user`
+WHERE `subscription`.`price` > 42
+ORDER BY `user_card`.`last_name`, `user_card`.`first_name` ASC;

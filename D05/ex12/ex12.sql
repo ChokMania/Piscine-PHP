@@ -1,3 +1,3 @@
-SELECT nom, prenomFROM fiche_personne
-WHERE nom LIKE '%-%' OR prenom LIKE '%-%'
-ORDER BY nom, prenom;
+SELECT `last_name`, `first_name` FROM `user_card`
+WHERE `last_name` LIKE '%-%' OR `first_name` LIKE '%-%'
+ORDER BY `last_name`, `first_name`;

@@ -1,3 +1,3 @@
-SELECT titre, resum FROM film
-WHERE resum LIKE '%42%' OR titre LIKE '%42%'
-ORDER BY duree_min ASC;
+SELECT `title`, `summary` FROM `film`
+WHERE `summary` LIKE '%42%' OR `title` LIKE '%42%'
+ORDER BY `duration` ASC;
