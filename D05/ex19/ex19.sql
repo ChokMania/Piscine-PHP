@@ -1,1 +1,1 @@
-SELECT DATEDIFF(MAX(date_dernier_film), MIN(date_dernier_film)) AS uptime FROM membre;
+SELECT DATEDIFF(MAX(`date_last_film`), MIN(`date_last_film`)) AS `uptime` FROM `member`;

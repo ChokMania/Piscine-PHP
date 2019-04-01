@@ -1,3 +1,3 @@
-SELECT etage_salle AS etage, SUM(nbr_siege) AS sieges FROM salle
-GROUP BY etage_salle
-ORDER BY sieges DESC;
+SELECT `floor_number` AS `floor`, SUM(`nb_seats`) AS `seats` FROM `cinema`
+GROUP BY `floor`
+ORDER BY `seats` DESC;

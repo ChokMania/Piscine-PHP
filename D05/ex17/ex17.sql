@@ -1,1 +1,2 @@
-SELECT COUNT(id_abo) AS nb_abo, FLOOR(SUM(prix) / COUNT(prix)) AS moy_abo, (SUM(duree_abo) % 42) AS ft FROM abonnement;
+SELECT COUNT(`id_sub`) AS `nb_susc`, FLOOR(SUM(`price`) / COUNT(`price`))
+AS `av_susc`, (SUM(`duration_sub`) % 42) AS `ft` FROM `subscription`;

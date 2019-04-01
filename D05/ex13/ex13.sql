@@ -1,1 +1,1 @@
-SELECT ROUND(SUM(nbr_siege) / COUNT(nom_salle)) AS moyenne FROM salle;
+SELECT ROUND(AVG(`nb_seats`)) AS `average` FROM `cinema`;
