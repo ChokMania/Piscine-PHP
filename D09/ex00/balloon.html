@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ballon</title>
+		<style>
+			#ballon {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				margin: 250px auto;
+				border-radius: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ballon"></div>
+		<script type="text/javascript">
+
+		</script>
+	</body>
+</html>
+
+<script type="text/javascript">
+	var ballon = document.querySelector('#ballon');
+	var size = 200;
+	var color = ['red', 'blue', 'green'];
+	var i = 1;
+	ballon.addEventListener('click', gonfler);
+	ballon.addEventListener('mouseout', degonfler);
+	function change_ballon() {
+		ballon.style.height = size + 'px';
+		ballon.style.width = size + 'px';
+		ballon.style.backgroundColor = color[i]
+	}
+	function gonfler() {
+		if ((size += 10) && size > 420)
+			size = 200;
+		if (++i > 2)
+			i = 0;
+		change_ballon();
+	}
+	function degonfler() {
+		if (size > 200)
+			size -= 5;
+		if (--i < 0)
+			i = 2;
+		change_ballon()
+	}
+</script>
