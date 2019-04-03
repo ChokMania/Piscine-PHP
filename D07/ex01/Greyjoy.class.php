@@ -1,7 +1,7 @@
 <?php
 Class Greyjoy
 {
-	protected $familyMotto = "We do not sow" . PHP_EOL;
+	protected $familyMotto = "We do not sow";
 }
 
 ?>
