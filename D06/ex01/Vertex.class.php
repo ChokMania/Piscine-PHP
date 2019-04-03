@@ -1,4 +1,5 @@
 <?php
+
 class Vertex {
 	private $_x = 0.0;
 	private $_y = 0.0;
@@ -63,3 +64,4 @@ class Vertex {
 
 	public function setColor($color) { $this->_color = $color; }
 }
+?>

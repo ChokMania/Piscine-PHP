@@ -1,14 +1,11 @@
-
 <- Vertex ----------------------------------------------------------------------
-The vertex class handles vectex.
+The Vertex class handles a point in a 3D space.
 
-She wait a array with the key:
-	=> 'x' : X coordinates, obligatory.
-	=> 'y' : Y coordinates, obligatory
-	=> 'z' : X coordinates, obligatory
-	=> 'w' : optional, take 1.0 by default.
-	=> 'color' : color of the vertex instance of the Color class (by default white)
+An instance can be constructed from xyzw values, plus a color
+new Vertex( array("x" => "1.0", "y" => "1.0", "z" => "1.0"[, "w" => "1.0"][, "color" => $color]) );
+Where $color is a instance of the Color class
+The default color is white.
 
-This Class doesn't purpose any method. You can set the attribute verbose at True or False
-for controlling the use of this class
+The class provides basic functions such as getters and setters.
+
 ---------------------------------------------------------------------- Vertex ->
