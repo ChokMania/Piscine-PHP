@@ -1,16 +1,65 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 	<head>
+		<meta charset="UTF-8">
 	</head>
 	<body>
-		<input id="left" type="text"/>
-		<select id="ope">
-			<option value="*">*</option>
-			<option value="-">-</option>
-			<option value="+">+</option>
-			<option value="/">/</option>
-			<option value="%">%</option>
-		</select>
-		<input id="right" type="text"/>
-		<input id="calc" type="button" value="Try me!"/>
-			</body>
+		<h1>Calculatrice</h1>
+		<form id="calcule">
+			<input type="text" id="left">
+			<select id="op">
+				<option value="add">+</option>
+				<option value="min">-</option>
+				<option value="mul">*</option>
+				<option value="div">/</option>
+				<option value="mod">%</option>
+			</select>
+			<input type="text" id="right">
+			<input type="submit" id="submit" value="Try me!">
+		</form>
+		<script>
+			var left;
+			var right;
+			var op;
+			var calcule;
+			window.onload = function ()
+			{
+				setInterval("alert('Please, use me...')", 30000);
+				left = document.querySelector("#left");
+				right = document.querySelector("#right");
+				op = document.querySelector("#op");
+				calcule = document.querySelector("#calcule");
+				calcule.addEventListener("submit", submit);
+			}
+			function submit(event)
+			{
+				var r_input = Number(right.value);
+				var l_input = Number(left.value);
+				if (op.value === 'add')
+					result(l_input + r_input);
+				else if (op.value === 'mul')
+					result(l_input * r_input);
+				else if (op.value ==='div')
+				{
+					if (r_input === 0)
+					result("It’s over 9000!");
+					else
+					result(l_input / r_input);
+				}
+				else if (op.value === 'mod')
+				{
+					if (r_input === 0)
+					result("It’s over 9000!");
+					else
+					result(l_input / r_input);
+				}
+				else if (op.value ==='min')
+					result(l_input - r_input);
+			}
+			function result(str) {
+				console.log(str);
+				alert(str);
+			}
+		</script>
+	</body>
 </html>
