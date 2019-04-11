@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<style>
+			#balloon {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				margin: 250px auto;
+				border-radius: 100%;
+			}
+		</style>
+				<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div id="balloon"></div>
+		<script>
+			var i = 0;
+			var color = ["red", "green", "blue"];
+			var size = 200;
+			$("#balloon").click(gonfler);
+			$("#balloon").mouseout(degonfler)
+			function change_ballon() {
+				$("#balloon").height(size);
+				$("#balloon").width(size);
+				$("#balloon").css("background-color", color[i]);
+			}
+			function gonfler() {
+				if ((size += 10) && size > 420)
+					size = 200;
+				if (++i > 2)
+					i = 0;
+				change_ballon();
+			}
+			function degonfler() {
+				if (size > 200)
+					size -= 5;
+				if (--i < 0)
+					i = 2;
+				change_ballon()
+			}
+		</script>
+	</body>
+</html>

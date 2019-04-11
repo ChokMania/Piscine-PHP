@@ -22,36 +22,38 @@
 			var right;
 			var op;
 			var calcule;
-			window.onload = function ()
-			{
-				setInterval("alert('Please, use me...')", 30000);
-				left = document.querySelector("#left");
-				right = document.querySelector("#right");
-				op = document.querySelector("#op");
-				calcule = document.querySelector("#calcule");
-				calcule.addEventListener("submit", submit);
-			}
-			function submit(event)
+			setInterval("alert('Please, use me...')", 30000);
+			left = document.querySelector("#left");
+			right = document.querySelector("#right");
+			op = document.querySelector("#op");
+			calcule = document.querySelector("#calcule");
+			calcule.addEventListener("submit", submit);
+			function submit()
 			{
 				var r_input = Number(right.value);
 				var l_input = Number(left.value);
-				if (op.value === 'add')
+				if (right.value === "" || left.value === "")
+					result("Error :(");
+				else if (!Number.isInteger(r_input) || !Number.isInteger(l_input)
+				|| r_input < 0 || l_input < 0)
+					result("Error :(");
+				else if (op.value === 'add')
 					result(l_input + r_input);
 				else if (op.value === 'mul')
 					result(l_input * r_input);
 				else if (op.value ==='div')
 				{
 					if (r_input === 0)
-					result("It’s over 9000!");
+						result("It’s over 9000!");
 					else
-					result(l_input / r_input);
+						result(l_input / r_input);
 				}
 				else if (op.value === 'mod')
 				{
 					if (r_input === 0)
-					result("It’s over 9000!");
+						result("It’s over 9000!");
 					else
-					result(l_input / r_input);
+						result(l_input / r_input);
 				}
 				else if (op.value ==='min')
 					result(l_input - r_input);
